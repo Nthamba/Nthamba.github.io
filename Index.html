@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* Light gray background */
+        }
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 800px;
+            width: 90%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            position: relative;
+            animation: fadeIn 0.3s ease-out;
+        }
+        .close-button {
+            color: #aaa;
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: #333;
+            text-decoration: none;
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #3b82f6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md p-4 sticky top-0 z-50 rounded-b-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-blue-600 rounded-md p-2 hover:bg-blue-50 transition-colors">Susan Masila</a>
+            <div class="flex space-x-4">
+                <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium p-2 rounded-md hover:bg-gray-100 transition-colors">About Me</a>
+                <a href="#projects" class="text-gray-700 hover:text-blue-600 font-medium p-2 rounded-md hover:bg-gray-100 transition-colors">Projects</a>
+                <a href="#skills" class="text-gray-700 hover:text-blue-600 font-medium p-2 rounded-md hover:bg-gray-100 transition-colors">Skills</a>
+                <a href="#education" class="text-gray-700 hover:text-blue-600 font-medium p-2 rounded-md hover:bg-gray-100 transition-colors">Education</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium p-2 rounded-md hover:bg-gray-100 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Home) -->
+    <section id="home" class="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20 px-4 text-center rounded-b-xl shadow-lg">
+        <div class="container mx-auto max-w-4xl">
+            <img src="RWH Profile Pic.jpg" alt="Susan Masila Profile Picture" class="rounded-full w-36 h-36 mx-auto mb-6 border-4 border-white shadow-lg object-cover">
+            <h1 class="text-5xl font-extrabold mb-4 leading-tight">Susan Masila</h1>
+            <p class="text-2xl font-light mb-8">WASH Specialist | Project Management & M&E Professional</p>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">
+                Dedicated WASH Specialist with over 13 years of progressive experience in implementing and managing Development and Humanitarian Programs in Water, Sanitation, and Hygiene across Africa. Skilled in environmental management, nature-based solutions, and sustainable water resource conservation.
+            </p>
+            <a href="#projects" class="inline-block bg-white text-blue-600 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-transform transform hover:scale-105">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-16 px-4 bg-white rounded-xl shadow-md mx-auto my-8 max-w-5xl">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center text-blue-700 mb-10">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="text-lg leading-relaxed">
+                    <p class="mb-4">
+                        Eng. Susan Masila is a highly experienced WASH Specialist with a strong background in environmental engineering and development program management. My career spans over a decade, focusing on sustainable water resource management, sanitation, and hygiene initiatives across various challenging environments in Africa.
+                    </p>
+                    <p class="mb-4">
+                        My expertise includes leading USAID's efforts to increase access to WASH services in Kenya, providing technical and strategic leadership from policy analysis to program design. I am adept at integrating environmental management practices into engineering solutions for water and wastewater systems, with a keen focus on nature-based solutions.
+                    </p>
+                    <p>
+                        I am passionate about driving measurable impact, fostering learning, and building capacity within teams and communities to achieve sustainable development goals. My structured thinking, intellectual curiosity, and team-oriented mindset enable me to translate complex strategies into actionable insights and measurable results.
+                    </p>
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://placehold.co/400x300/e0f2fe/000000?text=About+Me+Image" alt="About Me" class="rounded-lg shadow-lg max-w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects/Case Studies Section -->
+    <section id="projects" class="py-16 px-4 bg-gray-50 rounded-xl shadow-md mx-auto my-8 max-w-5xl">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center text-blue-700 mb-10">My Projects & Case Studies</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/300x200/a7d9f7/000000?text=WASH+Project" alt="WASH Project" class="rounded-md mb-4 w-full h-40 object-cover">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-2">USAID WASH Program Management</h3>
+                    <p class="text-gray-600 mb-4 text-sm">**Role:** WASH Project Management Specialist</p>
+                    <p class="text-gray-700 mb-4 project-description">
+                        Led technical and strategic efforts to increase access to WASH services in Kenya, overseeing program design, implementation, and evaluation.
+                    </p>
+                    <button class="get-insights-button bg-blue-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-blue-600 transition-colors mt-4 w-full">
+                        ✨ Get More Insights
+                    </button>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/300x200/a7d9f7/000000?text=M%26E+System" alt="M&E System" class="rounded-md mb-4 w-full h-40 object-cover">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-2">MERLA System Development (Light For The World)</h3>
+                    <p class="text-gray-600 mb-4 text-sm">**Role:** Consultant MERLA Officer</p>
+                    <p class="text-gray-700 mb-4 project-description">
+                        Established a robust data management system and reporting templates, enhancing program effectiveness and evidence-based decision-making.
+                    </p>
+                    <button class="get-insights-button bg-blue-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-blue-600 transition-colors mt-4 w-full">
+                        ✨ Get More Insights
+                    </button>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/300x200/a7d9f7/000000?text=Water+Supply" alt="Water Supply System" class="rounded-md mb-4 w-full h-40 object-cover">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-2">Urban and Rural Water Supply Design & Supervision (Amazi Water)</h3>
+                    <p class="text-gray-600 mb-4 text-sm">**Role:** Kenya Team Lead / WASH Engineer</p>
+                    <p class="text-gray-700 mb-4 project-description">
+                        Managed engineering support for the design, rehabilitation, and construction of urban and rural water systems in Burundi.
+                    </p>
+                    <button class="get-insights-button bg-blue-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-blue-600 transition-colors mt-4 w-full">
+                        ✨ Get More Insights
+                    </button>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/300x200/a7d9f7/000000?text=Advocacy" alt="Advocacy Report" class="rounded-md mb-4 w-full h-40 object-cover">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-2">"The VOICE" CSO Performance Reports (KEWASNET)</h3>
+                    <p class="text-gray-600 mb-4 text-sm">**Role:** Programme Support Specialist</p>
+                    <p class="text-gray-700 mb-4 project-description">
+                        Authored annual CSO performance reports, lobbying for improved governance and increased funding for WASH programs.
+                    </p>
+                    <button class="get-insights-button bg-blue-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-blue-600 transition-colors mt-4 w-full">
+                        ✨ Get More Insights
+                    </button>
+                </div>
+
+                <!-- New Project: Capacity Building through Humanitarian Global Institute -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/300x200/a7d9f7/000000?text=Capacity+Building" alt="Capacity Building Training" class="rounded-md mb-4 w-full h-40 object-cover">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-2">Capacity Building Initiatives (Humanitarian Global Institute)</h3>
+                    <p class="text-gray-600 mb-4 text-sm">**Role:** Consultant WASH Trainer</p>
+                    <p class="text-gray-700 mb-4 project-description">
+                        Designed and facilitated high-impact online and in-person training modules on WASH in Emergencies, WASH Cluster Coordination, and Sphere standards for participants from over 20 countries.
+                    </p>
+                    <button class="get-insights-button bg-blue-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-blue-600 transition-colors mt-4 w-full">
+                        ✨ Get More Insights
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 px-4 bg-white rounded-xl shadow-md mx-auto my-8 max-w-5xl">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center text-blue-700 mb-10">My Core Skills</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
+
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Project Management</h3>
+                    <p class="text-gray-600 text-sm">Full lifecycle oversight, KPI tracking, risk management, budget control, contract administration, tender management, schedule management, documentation assurance.</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Monitoring & Evaluation (M&E)</h3>
+                    <p class="text-gray-600 text-sm">Framework design and implementation, performance reporting systems, adaptive management tools, data management systems (e.g., ActivityInfo), results-based management.</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Data Analysis & Reporting</h3>
+                    <p class="text-gray-600 text-sm">Qualitative & quantitative research and analysis, synthesizing findings, compelling presentations, dashboards, internal/external reports, global reporting efforts.</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Environmental Management</h3>
+                    <p class="text-gray-600 text-sm">Sustainable water resource conservation, wastewater management, environmental impact assessment, integrating environmental practices into engineering solutions.</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Nature-Based Solutions (NbS)</h3>
+                    <p class="text-gray-600 text-sm">Leveraging natural processes for water purification, flood control, habitat restoration, ecosystem-based approaches in WASH/WRM programming.</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Capacity Building</h3>
+                    <p class="text-gray-600 text-sm">Training, mentorship for government staff, NGOs, community members on WASH principles, environmental sustainability, data management, and good hygiene practices.</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Stakeholder Engagement</h3>
+                    <p class="text-gray-600 text-sm">Developing client briefs, coordinating with diverse trades (IT, FM, Security), facilitating multi-functional teams, fostering learning and alignment across geographies.</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Policy & Governance</h3>
+                    <p class="text-gray-600 text-sm">Research, advocacy, policy analysis, policy development, governance reform, engagement with government officials and development partners (e.g., AMCOW).</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Engineering & Design Oversight</h3>
+                    <p class="text-gray-600 text-sm">Civil and Environmental Engineering, design management, construction supervision, technical documentation, adherence to international best practices.</p>
+                </div>
+                 <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Risk & Quality Management</h3>
+                    <p class="text-gray-600 text-sm">Delivering projects within risk frameworks, maintaining focus on time, cost, and quality, identifying and escalating delivery issues with mitigation actions.</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Technical Software Proficiency</h3>
+                    <p class="text-gray-600 text-sm">Microsoft Project, Smartsheet, Adaptive Works, AutoCAD, Photoshop, MS Office.</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Communication & Presentation</h3>
+                    <p class="text-gray-600 text-sm">Excellent written and verbal English, compelling presentations, clear articulation of complex ideas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 px-4 bg-gray-50 rounded-xl shadow-md mx-auto my-8 max-w-5xl">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center text-blue-700 mb-10">Education & Professional Development</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- University Education -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">University Education</h3>
+                    <div class="mb-4">
+                        <p class="font-medium text-lg">M.Sc. Water and Environmental Management</p>
+                        <p class="text-gray-700">Loughborough University, UK</p>
+                        <p class="text-gray-600 text-sm">2019</p>
+                    </div>
+                    <div>
+                        <p class="font-medium text-lg">B.Sc. Civil and Construction Engineering</p>
+                        <p class="text-gray-700">University of Nairobi, Kenya</p>
+                        <p class="text-gray-600 text-sm">2013</p>
+                    </div>
+                </div>
+
+                <!-- Other Trainings and Professional Development -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">Other Trainings & Professional Development</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>**2025:** Water Strategy and Planning, TU IHE Delft</li>
+                        <li>**2025:** Contracting Officer Representative (COR) Level 1 & 2, Federal Acquisition Institute/USAID</li>
+                        <li>**2024:** Solar-Powered Water Supply Systems (Principles and Design), Global Water Center.</li>
+                        <li>**2023:** Water and Sanitation Engineering (WATSAN): From Emergency towards Development, University of Neuchatel, Switzerland.</li>
+                        <li>**2020:** Faecal Sludge Management in Rural Areas (Online Global Training Programme), The Centre for Science and Environment, India</li>
+                        <li>**2017:** Introduction to Arbitration, Chartered Institute of Arbitrators</li>
+                        <li>**2015:** Contract Management Seminar, The Institution of Engineers of Kenya</li>
+                        <li>**2014:** Professional Interview Preparation, The Institution of Engineers of Kenya</li>
+                        <li>**2010:** Basic and Advanced Draughting, CITECH</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4 bg-white rounded-xl shadow-md mx-auto my-8 max-w-5xl">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold text-blue-700 mb-8">Get In Touch</h2>
+            <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+                I'm always open to discussing new projects, collaborations, or opportunities. Feel free to reach out!
+            </p>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="mailto:masilasusan@gmail.com" class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition-colors transform hover:scale-105">
+                    Email Me: masilasusan@gmail.com
+                </a>
+                <p class="text-gray-700 text-lg">+254 711 633 690</p>
+                <a href="https://linkedin.com/in/susan-masila-your-linkedin-profile" target="_blank" class="text-blue-600 hover:underline font-medium flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    Connect on LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 px-4 text-center rounded-t-lg">
+        <div class="container mx-auto">
+            <p>&copy; 2025 Susan Masila. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Project Insights Modal -->
+    <div id="projectInsightsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modalProjectTitle" class="text-2xl font-bold text-blue-700 mb-4"></h3>
+            <div id="modalProjectInsights" class="text-gray-800 leading-relaxed">
+                <!-- Insights will be loaded here -->
+            </div>
+            <div id="loadingSpinner" class="spinner hidden"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const getInsightsButtons = document.querySelectorAll('.get-insights-button');
+            const modal = document.getElementById('projectInsightsModal');
+            const closeButton = document.querySelector('.close-button');
+            const modalProjectTitle = document.getElementById('modalProjectTitle');
+            const modalProjectInsights = document.getElementById('modalProjectInsights');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+
+            getInsightsButtons.forEach(button => {
+                button.addEventListener('click', async (event) => {
+                    // Get project details from the parent card
+                    const projectCard = event.target.closest('.bg-white');
+                    const projectTitle = projectCard.querySelector('h3').textContent;
+                    const projectDescription = projectCard.querySelector('.project-description').textContent;
+
+                    // Set modal title
+                    modalProjectTitle.textContent = projectTitle;
+                    modalProjectInsights.innerHTML = ''; // Clear previous content
+                    loadingSpinner.classList.remove('hidden'); // Show spinner
+                    modal.style.display = 'flex'; // Show modal
+
+                    // Construct prompt for LLM
+                    const prompt = `Provide a detailed summary and key achievements for the following project, focusing on its impact and your role:\n\nProject Title: ${projectTitle}\nProject Description: ${projectDescription}\n\nEnsure the response is professional and highlights measurable outcomes where applicable.`;
+
+                    try {
+                        let chatHistory = [];
+                        chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                        const payload = { contents: chatHistory };
+                        const apiKey = ""; // Canvas will automatically provide the API key
+                        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                        const response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        const result = await response.json();
+
+                        if (result.candidates && result.candidates.length > 0 &&
+                            result.candidates[0].content && result.candidates[0].content.parts &&
+                            result.candidates[0].content.parts.length > 0) {
+                            const text = result.candidates[0].content.parts[0].text;
+                            modalProjectInsights.innerHTML = text.replace(/\n/g, '<br>'); // Display response, convert newlines to <br>
+                        } else {
+                            modalProjectInsights.textContent = 'Could not generate insights. Please try again later.';
+                            console.error('Gemini API response structure unexpected:', result);
+                        }
+                    } catch (error) {
+                        modalProjectInsights.textContent = 'Failed to load insights. Please check your network connection or try again.';
+                        console.error('Error calling Gemini API:', error);
+                    } finally {
+                        loadingSpinner.classList.add('hidden'); // Hide spinner
+                    }
+                });
+            });
+
+            // Close modal when close button is clicked
+            closeButton.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            // Close modal when clicking outside of the modal content
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
